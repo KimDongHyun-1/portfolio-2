@@ -315,3 +315,10 @@ body {
 .btn-prev i {
   font-size: 40px;
 }
+/* 페이지네이션 위치 이동 */
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  transform: translateY(50px) !important;
+}
