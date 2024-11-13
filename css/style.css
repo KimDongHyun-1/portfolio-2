@@ -1,0 +1,317 @@
+/* 기본 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Arial", sans-serif;
+  color: #fff;
+  background-color: #111;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-size: 14px;
+  color: #000;
+}
+
+/* 메뉴바 스타일 */
+.menu-bar {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menu-bar i {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu-bar i:hover {
+  transform: scale(1.2);
+}
+
+/* 아이콘 색상 */
+.icon-discord {
+  color: #b197fc;
+}
+.icon-youtube {
+  color: #f60921;
+}
+.icon-instagram {
+  color: #f109b3;
+}
+
+/* 각 섹션 스타일 */
+.item {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* 1번 섹션 스타일 */
+#section1 .section-content {
+  z-index: 10;
+  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3); /* 배경색을 검은색 30% 투명도로 설정 */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 2번 섹션 스타일 */
+#section2 {
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  position: relative;
+  width: 100%;
+}
+
+.section-content {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+/* 3번 섹션 스타일 */
+#section3 {
+  background-color: #121212;
+}
+
+/* 증명사진 스타일 */
+.profile-photo {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.name {
+  font-family: "Jua";
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: aqua;
+}
+
+.age,
+.phone,
+.address {
+  font-size: 20px;
+  color: #e366f3;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.phone {
+  color: #d5f75b;
+}
+
+.address {
+  color: #80f3da;
+}
+
+.intro {
+  font-family: "Nanum Pen Script";
+  font-size: 27px;
+  color: #61f83b;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* 비디오 스타일 */
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.item-num {
+  display: none;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 768px) {
+  .menu-bar {
+    top: 20px;
+    right: 20px;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+
+  .section-content {
+    padding: 15px;
+  }
+
+  .video-slider {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu-bar {
+    gap: 10px;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .video-slider {
+    gap: 10px;
+  }
+}
+
+/* Swiper 스타일 */
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #333;
+}
+
+.video-thumbnail {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .video-thumbnail {
+    max-height: 400px;
+  }
+}
+
+.video-content {
+  width: 100%;
+  height: auto;
+}
+
+.video-title {
+  font-size: 22px;
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  background-color: #585858;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.video-description {
+  font-size: 16px;
+  color: #bbb;
+  padding: 10px;
+  font-family: "Arial", sans-serif;
+  line-height: 1.5;
+  background-color: #2e2e2e;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* 설명 텍스트 강조 */
+.video-description:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+/* 마우스 오버 시 비디오 영역 밝기 변화 */
+.video-thumbnail:hover .video-content {
+  filter: brightness(1.2);
+}
+
+/* 비디오 슬라이더 스타일 */
+.video-slider {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 100%;
+  position: relative;
+}
+
+/* 버튼 기본 스타일 */
+.btn-next,
+.btn-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #cacaca;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+/* 오른쪽 버튼 위치 */
+.btn-next {
+  right: 20px;
+}
+
+/* 왼쪽 버튼 위치 */
+.btn-prev {
+  left: 20px;
+}
+
+/* 버튼에 마우스 오버 시 스타일 */
+.btn-next:hover,
+.btn-prev:hover {
+  color: rgb(54, 245, 101);
+}
+
+/* 화살표 아이콘 */
+.btn-next i,
+.btn-prev i {
+  font-size: 40px;
+}
