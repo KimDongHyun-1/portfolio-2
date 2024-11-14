@@ -62,18 +62,52 @@ body {
   justify-content: center;
   padding: 20px;
 }
-
-/* 1번 섹션 스타일 */
-#section1 .section-content {
-  z-index: 10;
-  text-align: center;
+#section1 {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.3); /* 배경색을 검은색 30% 투명도로 설정 */
-  padding: 20px;
-  border-radius: 10px;
+  background-image: url("../img/background-img2.jpg"); /* 파일 경로 확인 */
+  background-size: cover; /* 이미지가 섹션을 덮도록 설정 */
+  background-position: center; /* 이미지 중앙 정렬 */
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
+  width: 100%;
+  height: 100vh; /* 섹션 높이를 화면 높이에 맞춤 */
+}
+
+/* 비디오 컨테이너 스타일 */
+.video-container {
+  position: absolute;
+  top: 50%;
+  right: 90px; /* 화면 오른쪽에서 90px 떨어짐 */
+  transform: translateY(-50%); /* 세로 방향으로 중앙 정렬 */
+  width: 900px; /* 비디오 컨테이너의 가로 크기 */
+  height: 490px; /* 비디오 컨테이너의 세로 크기 */
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5); /* 비디오 배경을 어둡게 */
+  border-radius: 10px; /* 비디오 컨테이너의 모서리 둥글게 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 비디오 컨테이너 그림자 */
+  overflow: hidden; /* 비디오가 컨테이너 밖으로 나가지 않도록 설정 */
+}
+
+/* 비디오 크기 설정 */
+.video-container video {
+  width: 100%; /* 컨테이너의 가로 크기에 맞춤 */
+  height: 100%; /* 컨테이너의 세로 크기에 맞춤 */
+  object-fit: cover; /* 비디오가 컨테이너를 덮도록 설정 */
+}
+
+/* 1번 섹션 콘텐츠 스타일 */
+#section1 .section-content {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  z-index: 10;
   max-width: 600px;
   margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(24, 24, 24, 0.3); /* 검은색 30% 투명 배경 */
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 /* 2번 섹션 스타일 */
@@ -141,17 +175,6 @@ body {
   line-height: 1.5;
 }
 
-/* 비디오 스타일 */
-.background-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
 .item-num {
   display: none;
 }
@@ -203,7 +226,7 @@ body {
 /* Swiper 스타일 */
 .mySwiper {
   width: 100%;
-  height: 100%;
+  height: 450px;
 }
 
 .swiper-slide {
@@ -212,6 +235,8 @@ body {
   align-items: center;
   text-align: center;
   background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .video-thumbnail {
@@ -248,7 +273,7 @@ body {
   padding: 10px;
   font-family: "Arial", sans-serif;
   line-height: 1.5;
-  background-color: #2e2e2e;
+  background-color: #252525;
   border-radius: 5px;
   margin-top: 10px;
   text-align: left;
@@ -257,7 +282,7 @@ body {
 /* 설명 텍스트 강조 */
 .video-description:hover {
   color: #fff;
-  background-color: #333;
+  background-color: #1d1d1d;
 }
 
 /* 마우스 오버 시 비디오 영역 밝기 변화 */
