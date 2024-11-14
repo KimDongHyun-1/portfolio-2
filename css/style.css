@@ -128,11 +128,6 @@ body {
   z-index: 10;
 }
 
-/* 3번 섹션 스타일 */
-#section3 {
-  background-color: #121212;
-}
-
 /* 증명사진 스타일 */
 .profile-photo {
   border-radius: 50%;
@@ -346,4 +341,46 @@ body {
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   transform: translateY(50px) !important;
+}
+/* 섹션 3 스타일 */
+#section3 {
+  background: linear-gradient(135deg, #333, #000); /* 배경 그라디언트 설정 */
+  padding: 50px 0;
+}
+
+#section3 .section-content {
+  width: 100%;
+  margin: 0 auto; /* 중앙 정렬 */
+  text-align: center; /* 중앙 정렬 */
+}
+
+#section3 h2 {
+  font-size: 6.5em;
+  margin-bottom: 30px;
+  position: relative;
+  top: 20px; /* 섹션 상단에서 100px 아래로 이동 */
+  color: #fff;
+  text-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+#section3 .contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+#section3 .info-item {
+  max-width: 300px;
+}
+
+#section3 .info-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: azure;
+}
+
+#section3 .info-item p {
+  font-size: 1.2em;
+  color: #333;
 }

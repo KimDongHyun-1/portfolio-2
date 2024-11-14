@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       disableOnInteraction: false,
     },
     loop: true,
-    // loopAdditionalSlides: 1,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -36,5 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".btn-next", // 다음 버튼
       prevEl: ".btn-prev", // 이전 버튼
     },
+  });
+
+  // 2번 섹션에 마우스 호버 시 슬라이드 정지
+  const swiperContainer = document.querySelector(".mySwiper");
+
+  swiperContainer.addEventListener("mouseover", () => {
+    swiper.autoplay.stop(); // 슬라이드 정지
+  });
+
+  swiperContainer.addEventListener("mouseout", () => {
+    swiper.autoplay.start(); // 슬라이드 재개
   });
 });
