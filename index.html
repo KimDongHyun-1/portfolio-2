@@ -11,6 +11,9 @@
     <!-- CSS 링크 -->
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/section1.css" />
+    <link rel="stylesheet" href="css/section2.css" />
+    <link rel="stylesheet" href="css/section3.css" />
 
     <!-- 구글 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,31 +48,44 @@
 
     <div class="wrap">
       <!-- 1번 섹션 -->
-      <section id="section1" class="item">
+      <section id="section1">
         <div class="section-content">
-          <!-- 증명사진 -->
-          <img
-            src="img/가짜증명사진 .png"
-            alt="증명사진"
-            class="profile-photo"
-          />
-          <h2 class="name">김동현</h2>
-          <p class="age">나이: 1999년생</p>
-          <p class="phone">전화번호: 010-9130-4679</p>
-          <p class="address">주소지: 대구광역시 달성군</p>
-          <p class="intro">
-            안녕하세요! 저는 영상 제작자로서 다양한 영상 콘텐츠를 제작하고
-            편집하는 일을 하고 있습니다. 제 포트폴리오에는 다양한 프로젝트
-            경험이 있으며, 기술과 창의력을 바탕으로 세심하고 품질 높은 영상을
-            제공합니다.
-          </p>
+          <div class="profile-photo-container">
+            <img
+              src="img/가짜증명사진 .png"
+              alt="증명사진"
+              class="profile-photo"
+            />
+          </div>
+
+          <div class="content-info">
+            <h2 class="name">김동현</h2>
+            <p class="age">나이: 1999년생</p>
+            <p class="phone">전화번호: 010-9130-4679</p>
+            <p class="address">주소지: 대구광역시 달성군</p>
+            <p class="intro">
+              안녕하세요! 저는 영상 제작자로서 다양한 영상 콘텐츠를 제작하고
+              편집하는 일을 하고 있습니다. 제 포트폴리오에는 다양한 프로젝트
+              경험이 있으며, 기술과 창의력을 바탕으로 세심하고 품질 높은 영상을
+              제공합니다.
+            </p>
+          </div>
+
+          <div class="image-container">
+            <!-- 여백을 채우기 위한 이미지들 -->
+            <img
+              src="img/after-effects.png"
+              alt="이미지 1"
+              class="image-item"
+            />
+            <img src="img/photoshop.png" alt="이미지 2" class="image-item" />
+            <img src="img/premiere-pro.png" alt="이미지 3" class="image-item" />
+          </div>
         </div>
 
-        <!-- 반복 재생되는 비디오 영역 -->
         <div class="video-container">
           <video autoplay loop muted playsinline class="profile-video">
             <source src="videos/intro.mp4" type="video/mp4" />
-            <!-- 추가적으로 다른 형식을 지원할 수 있습니다. -->
             Your browser does not support the video tag.
           </video>
         </div>
@@ -189,7 +205,7 @@
         <span class="item-num">03</span>
         <div class="item-img"></div>
         <div class="section-content">
-          <h2>Contact Me</h2>
+          <h2 class="contact-title">Contact Me</h2>
           <div class="contact-info">
             <div class="info-item">
               <h3>Address</h3>
@@ -204,6 +220,14 @@
               <p>je08254@naver.com</p>
             </div>
           </div>
+          <!-- 오른쪽에 추가될 문구 -->
+          <div class="additional-info">
+            <p>언제든지 연락 남겨주세요.<br />좋은 결과물로 보답하겠습니다.</p>
+          </div>
+        </div>
+
+        <div class="footer-text">
+          <p>© 2024 KimDongHyun. All Rights Reserved.</p>
         </div>
       </section>
     </div>
