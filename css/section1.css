@@ -1,128 +1,108 @@
+/* Section1 스타일 */
 #section1 {
   position: relative;
-  background-image: url("../img/background-img3.jpg"); /* 파일 경로 확인 */
-  background-size: cover; /* 이미지가 섹션을 덮도록 설정 */
-  background-position: center; /* 이미지 중앙 정렬 */
-  background-repeat: no-repeat; /* 이미지 반복 방지 */
+  background-image: url("../img/background-img3.jpg"); /* 배경 이미지 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  height: 100vh; /* 섹션 높이를 화면 높이에 맞춤 */
+  height: 100vh; /* 화면 전체 높이 */
+  display: flex; /* 콘텐츠 정렬을 위해 flexbox 사용 */
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: flex-start; /* 가로 중앙 정렬이 아닌 왼쪽으로 정렬 */
+  padding: 20px; /* 내부 여백 추가 */
+  box-sizing: border-box; /* 패딩 포함한 박스 모델 */
 }
 
-/* 1번 섹션 콘텐츠 스타일 */
+/* Section1 내부 콘텐츠 스타일 */
 #section1 .section-content {
-  position: absolute;
-  top: 50%;
-  left: 100px; /* 왼쪽으로 100px 떨어지도록 */
-  transform: translateY(-50%);
-  z-index: 10;
-  max-width: 600px;
-  margin: 0 auto;
+  display: flex; /* 내부 요소들을 나란히 배치 */
+  flex-direction: column; /* 수직 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  max-width: 600px; /* 콘텐츠 최대 너비 */
   padding: 20px;
-  background-color: rgba(12, 12, 12, 0.8); /* 검은색 30% 투명 배경 */
+  background-color: rgba(12, 12, 12, 0.8); /* 배경 색상 */
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(105, 252, 124, 0.3);
-  text-align: left; /* 텍스트 왼쪽 정렬 */
+  box-shadow: 0 4px 10px rgba(105, 252, 124, 0.3); /* 그림자 */
+  z-index: 10;
+  position: absolute; /* 절대 위치로 설정 */
+  left: 200px; /* 화면 왼쪽에서 200px 떨어지도록 설정 */
 }
 
-/* 이미지 컨테이너 스타일 */
-#section1 .section-content .image-container {
-  position: absolute; /* 우측 상단에 배치 */
-  top: 180px; /* 기존 10px에서 20px 아래로 이동 */
-  right: 10px;
-  display: flex; /* 이미지를 가로로 나열 */
-  gap: 15px; /* 이미지 간의 간격 */
+/* 프로필 사진 스타일 */
+.profile-photo-container {
+  margin-bottom: 20px; /* 아래 여백 추가 */
 }
 
-#section1 .section-content .image-item {
-  width: 50px; /* 이미지 크기 설정 */
-  height: 50px;
-  object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.3s ease; /* 호버 시 애니메이션 */
-}
-
-#section1 .section-content .image-item:hover {
-  transform: scale(1.1); /* 마우스를 올리면 이미지 크기 커짐 */
-}
-
-/* 증명사진 스타일 - 가로 및 세로 중앙 정렬 */
 .profile-photo {
-  border-radius: 50%;
   width: 150px;
   height: 150px;
-  object-fit: cover;
-  margin-bottom: 20px;
-  z-index: 2;
-  display: block; /* 이미지를 블록 요소로 설정 */
-  position: absolute; /* 절대 위치로 설정 */
-  left: 50%; /* 부모 요소의 가로 중앙 */
-  top: 0; /* 부모 요소의 상단에 위치 */
-  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  border-radius: 50%; /* 원형 사진 */
+  object-fit: cover; /* 비율 유지하며 크기 조정 */
+  border: 3px solid rgba(255, 255, 255, 0.8); /* 테두리 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 그림자 */
 }
 
-/* 이름, 나이, 전화번호 등 스타일 - 왼쪽 정렬 */
-.name {
-  font-family: "Nanum Gothic Coding";
-  font-size: 30px;
-  margin-bottom: 10px;
-  color: #dbdbdb;
-  text-align: left; /* 왼쪽 정렬 */
+/* 텍스트 정보 스타일 */
+.content-info {
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  background-color: rgba(255, 255, 255, 0.8); /* 배경 색상 */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 */
+  width: 100%;
+  max-width: 600px;
 }
 
-.age,
-.phone,
-.address {
-  font-size: 20px;
-  color: #dbdbdb;
-  margin-bottom: 10px;
+/* 이름, 나이, 연락처 스타일 */
+.content-info h2.name {
+  font-size: 24px;
   font-weight: bold;
-  text-align: left; /* 왼쪽 정렬 */
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.phone {
-  color: #dbdbdb;
+.content-info p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
 }
 
-.address {
-  color: #dbdbdb;
-}
-
-.intro {
-  font-family: "Do Hyeon";
-  font-size: 25px;
-  color: #46f05a;
-  margin-top: 10px;
+.content-info p.intro {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
   line-height: 1.5;
-  text-align: left; /* 왼쪽 정렬 */
 }
 
-/* 비디오 컨테이너 스타일 */
+/* 비디오 컨테이너 */
 .video-container {
   position: absolute;
   top: 50%;
   right: 90px; /* 화면 오른쪽에서 90px 떨어짐 */
-  transform: translateY(-50%); /* 세로 방향으로 중앙 정렬 */
-  width: 900px; /* 비디오 컨테이너의 가로 크기 */
-  height: 490px; /* 비디오 컨테이너의 세로 크기 */
+  transform: translateY(-50%);
+  width: 900px;
+  height: 490px;
   z-index: 5;
-  background-color: rgba(0, 0, 0, 0.5); /* 비디오 배경을 어둡게 */
-  border-radius: 10px; /* 비디오 컨테이너의 모서리 둥글게 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 비디오 컨테이너 그림자 */
-  overflow: hidden; /* 비디오가 컨테이너 밖으로 나가지 않도록 설정 */
+  background-color: rgba(0, 0, 0, 0.5); /* 배경 어둡게 */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
 /* 비디오 크기 설정 */
 .video-container video {
-  width: 100%; /* 컨테이너의 가로 크기에 맞춤 */
-  height: 100%; /* 컨테이너의 세로 크기에 맞춤 */
-  object-fit: cover; /* 비디오가 컨테이너를 덮도록 설정 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* 반응형 디자인 */
 @media screen and (max-width: 768px) {
-  .menu-bar {
-    top: 20px;
-    right: 20px;
+  #section1 {
+    flex-direction: column; /* 세로 배치 */
+    padding: 10px;
   }
 
   .profile-photo {
@@ -130,22 +110,28 @@
     height: 120px;
   }
 
-  .name {
-    font-size: 30px;
-  }
-
-  .section-content {
+  .content-info {
+    max-width: 100%;
     padding: 15px;
   }
 
-  .video-slider {
-    gap: 15px;
+  .video-container {
+    width: 100%;
+    height: auto;
+    right: 0;
+    left: 0;
+    margin: 20px auto;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: auto;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .menu-bar {
-    gap: 10px;
+  #section1 {
+    padding: 5px;
   }
 
   .profile-photo {
@@ -153,11 +139,13 @@
     height: 100px;
   }
 
-  .name {
-    font-size: 24px;
+  .content-info {
+    font-size: 14px;
+    padding: 10px;
   }
 
-  .video-slider {
-    gap: 10px;
+  .video-container {
+    width: 100%;
+    height: auto;
   }
 }
