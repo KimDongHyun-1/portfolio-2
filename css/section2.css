@@ -39,13 +39,20 @@
 .video-thumbnail {
   width: 100%;
   max-height: 300px;
-  overflow: hidden;
+  overflow: hidden; /* 영상 크기 유지 */
 }
 
 @media screen and (min-width: 768px) {
   .video-thumbnail {
     max-height: 400px;
   }
+}
+
+/* Ensure proper fitting of the iframe */
+.video-thumbnail iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 비율을 맞추기 위한 설정 */
 }
 
 .video-content {
@@ -137,6 +144,7 @@
 .btn-prev i {
   font-size: 40px;
 }
+
 /* 페이지네이션 위치 이동 */
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
