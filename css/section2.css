@@ -1,16 +1,32 @@
 /* 2번 섹션 스타일 */
 #section2 {
-  background-color: #121212;
+  background-image: url("../img/section2-bg.jpg"); /* 배경 이미지 경로 */
+  background-size: cover; /* 이미지를 섹션 크기에 맞게 조정 */
+  background-position: center; /* 이미지를 가운데 정렬 */
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px 0;
   position: relative;
   width: 100%;
+  overflow: hidden; /* 필요 시 초과 콘텐츠 숨김 */
+}
+
+/* 섹션의 오버레이 추가 */
+#section2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정 오버레이 */
+  z-index: 1;
 }
 
 .section-content {
-  position: absolute;
+  position: relative; /* 오버레이와 겹치지 않도록 수정 */
   width: 100%;
   text-align: center;
   z-index: 10;
@@ -22,8 +38,9 @@
 
 /* Swiper 스타일 */
 .mySwiper {
-  width: 100%;
+  width: 100%; /* 양쪽 간격 확보 */
   height: 450px;
+  z-index: 10;
 }
 
 .swiper-slide {
@@ -31,15 +48,18 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #333;
-  padding: 10px;
-  border-radius: 5px;
+  background-color: rgba(22, 22, 22, 0.9); /* 투명한 배경 */
+  padding: 15px; /* 여백 증가 */
+  border-radius: 8px; /* 라운드 효과 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* 슬라이드 박스 그림자 */
 }
 
+/* 비디오 썸네일 */
 .video-thumbnail {
-  width: 100%;
-  max-height: 300px;
+  /* width: 100%; */
+  height: 250px;
   overflow: hidden; /* 영상 크기 유지 */
+  border-radius: 5px; /* 라운드 효과 */
 }
 
 @media screen and (min-width: 768px) {
@@ -48,36 +68,31 @@
   }
 }
 
-/* Ensure proper fitting of the iframe */
 .video-thumbnail iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 비율을 맞추기 위한 설정 */
-}
-
-.video-content {
-  width: 100%;
-  height: auto;
+  object-fit: cover; /* 비율 유지 */
+  border: none;
 }
 
 .video-title {
   font-size: 22px;
   color: #fff;
   font-family: "Orbitron", sans-serif;
-  background-color: #585858;
+  background-color: rgba(88, 88, 88, 0.9); /* 투명한 배경 */
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
   border-radius: 5px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .video-description {
   font-size: 16px;
-  color: #bbb;
+  color: #48ee7f;
   padding: 10px;
   font-family: "Arial", sans-serif;
   line-height: 1.5;
-  background-color: #252525;
+  background-color: rgba(37, 37, 37, 0.9); /* 투명한 배경 */
   border-radius: 5px;
   margin-top: 10px;
   text-align: left;
@@ -86,15 +101,16 @@
 /* 설명 텍스트 강조 */
 .video-description:hover {
   color: #fff;
-  background-color: #1d1d1d;
+  background-color: rgba(29, 29, 29, 1);
 }
 
-/* 마우스 오버 시 비디오 영역 밝기 변화 */
-.video-thumbnail:hover .video-content {
+/* 마우스 오버 시 비디오 밝기 변화 */
+.video-thumbnail:hover iframe {
   filter: brightness(1.2);
+  transition: filter 0.3s ease;
 }
 
-/* 비디오 슬라이더 스타일 */
+/* 비디오 슬라이더 */
 .video-slider {
   display: flex;
   gap: 20px;
@@ -102,10 +118,9 @@
   flex-wrap: wrap;
   padding: 10px;
   width: 100%;
-  position: relative;
 }
 
-/* 버튼 기본 스타일 */
+/* 좌우 버튼 스타일 */
 .btn-next,
 .btn-prev {
   position: absolute;
@@ -116,36 +131,32 @@
   border-radius: 50%;
   cursor: pointer;
   font-size: 24px;
-  z-index: 100;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
 }
 
-/* 오른쪽 버튼 위치 */
 .btn-next {
   right: 20px;
 }
 
-/* 왼쪽 버튼 위치 */
 .btn-prev {
   left: 20px;
 }
 
-/* 버튼에 마우스 오버 시 스타일 */
 .btn-next:hover,
 .btn-prev:hover {
   color: rgb(54, 245, 101);
 }
 
-/* 화살표 아이콘 */
 .btn-next i,
 .btn-prev i {
   font-size: 40px;
 }
 
-/* 페이지네이션 위치 이동 */
+/* 페이지네이션 */
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,

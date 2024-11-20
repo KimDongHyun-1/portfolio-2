@@ -1,6 +1,6 @@
 /* 섹션 3 스타일 */
 #section3 {
-  background: linear-gradient(135deg, #333, #000); /* 배경 그라디언트 설정 */
+  background: linear-gradient(135deg, #444, #000); /* 배경 그라디언트 설정 */
   padding: 50px 0;
 }
 
@@ -25,7 +25,7 @@
     135deg,
     #a620ff 40%,
     #56ff9c 60%
-  ); /*  비율로 그라디언트 색상 적용 */
+  ); /* 비율로 그라디언트 색상 적용 */
   -webkit-background-clip: text; /* 텍스트에만 그라디언트 배경을 적용 */
   color: transparent; /* 텍스트 자체 색상은 투명으로 설정 */
 }
@@ -62,6 +62,7 @@
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 30px; /* 텍스트와 아이콘 간격 */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* 그림자 효과 추가 */
 }
 
 #section3 .info-item:nth-child(2) h3 {
@@ -70,6 +71,7 @@
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 30px;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* 그림자 효과 추가 */
 }
 
 #section3 .info-item:nth-child(3) h3 {
@@ -78,6 +80,7 @@
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 30px;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* 그림자 효과 추가 */
 }
 
 #section3 .info-item p {
@@ -107,12 +110,32 @@
 #section3 .additional-info p {
   margin: 0;
 }
-/* #section3에 하단 중앙 정렬된 텍스트 추가 */
+
+/* #section3에 하단 왼쪽 정렬된 텍스트 */
 #section3 .footer-text {
   position: absolute;
   bottom: 10px; /* 하단에서 10px 떨어지게 설정 */
   left: 50%;
   transform: translateX(-50%); /* 중앙 정렬 */
+  display: flex; /* Flexbox 활성화 */
+  gap: 20px; /* 항목 간 간격 설정 */
+  justify-content: center; /* 항목을 중앙 정렬 */
+  align-items: center; /* 수직 정렬 */
   font-size: 1.2em; /* 글씨 크기 설정 */
-  color: rgb(231, 241, 253); /* 글씨 색상 설정 */
+  color: rgb(231, 241, 253); /* 기본 글씨 색상 */
+}
+
+#section3 .footer-text a {
+  color: #4caf50; /* 링크 색상 */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#section3 .footer-text a:hover {
+  text-decoration: underline; /* 링크에 마우스 오버 시 밑줄 추가 */
+}
+
+#section3 .footer-text strong {
+  color: #26ff49; /* 강조 텍스트 색상 */
+  font-weight: bold;
 }
