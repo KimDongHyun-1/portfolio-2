@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Swiper 초기화
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 4,
+    slidesPerView: 4, // 기본 슬라이드 개수
     spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
@@ -34,6 +34,21 @@ document.addEventListener("DOMContentLoaded", function () {
     navigation: {
       nextEl: ".btn-next", // 다음 버튼
       prevEl: ".btn-prev", // 이전 버튼
+    },
+    breakpoints: {
+      // 반응형 설정 (슬라이드 수 변경)
+      1440: {
+        slidesPerView: 5, // 1440px 이상에서 3개 슬라이드
+      },
+      1024: {
+        slidesPerView: 3, // 1024px 이상에서 2개 슬라이드
+      },
+      768: {
+        slidesPerView: 1, // 768px 이하에서 1개 슬라이드
+      },
+      320: {
+        slidesPerView: 1, // 320px 이하에서 1개 슬라이드
+      },
     },
   });
 

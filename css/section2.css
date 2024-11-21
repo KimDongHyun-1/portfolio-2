@@ -38,9 +38,11 @@
 
 /* Swiper 스타일 */
 .mySwiper {
-  width: 100%; /* 양쪽 간격 확보 */
-  height: 450px;
-  z-index: 10;
+  width: 100%; /* 전체 너비 */
+  height: auto; /* 높이를 자동으로 조정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide {
@@ -48,42 +50,34 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: rgba(22, 22, 22, 0.9); /* 투명한 배경 */
-  padding: 15px; /* 여백 증가 */
-  border-radius: 8px; /* 라운드 효과 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* 슬라이드 박스 그림자 */
+  background-color: rgba(22, 22, 22, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* 비디오 썸네일 */
 .video-thumbnail {
-  /* width: 100%; */
-  height: 250px;
-  overflow: hidden; /* 영상 크기 유지 */
-  border-radius: 5px; /* 라운드 효과 */
-}
-
-@media screen and (min-width: 768px) {
-  .video-thumbnail {
-    max-height: 400px;
-  }
+  width: 100%;
+  height: 200px; /* 썸네일 높이 */
+  margin-bottom: 15px; /* 비디오와 텍스트 간 간격 */
 }
 
 .video-thumbnail iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 비율 유지 */
-  border: none;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .video-title {
-  font-size: 22px;
+  font-size: 20px;
   color: #fff;
   font-family: "Orbitron", sans-serif;
-  background-color: rgba(88, 88, 88, 0.9); /* 투명한 배경 */
+  background-color: rgba(88, 88, 88, 0.9);
   padding: 10px;
-  margin-top: 15px;
   border-radius: 5px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  margin-top: 10px;
 }
 
 .video-description {
@@ -92,16 +86,48 @@
   padding: 10px;
   font-family: "Arial", sans-serif;
   line-height: 1.5;
-  background-color: rgba(37, 37, 37, 0.9); /* 투명한 배경 */
+  background-color: rgba(37, 37, 37, 0.9);
   border-radius: 5px;
   margin-top: 10px;
   text-align: left;
+  word-wrap: break-word; /* 텍스트가 잘리지 않도록 설정 */
+  overflow: hidden; /* 내용이 넘칠 경우 숨김 처리 */
+  max-height: 120px; /* 최대 높이 제한 */
 }
 
 /* 설명 텍스트 강조 */
 .video-description:hover {
   color: #fff;
   background-color: rgba(29, 29, 29, 1);
+}
+
+/* 슬라이드 비율 */
+@media screen and (max-width: 1440px) {
+  .swiper-slide {
+    width: 30%; /* 1440px 이상 화면에서 3개 슬라이드 */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .swiper-slide {
+    width: 45%; /* 1024px 이하 화면에서 2개 슬라이드 */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-slide {
+    width: 90%; /* 768px 이하 화면에서 1개 슬라이드 */
+  }
+}
+
+/* Swiper 페이지네이션 및 버튼 */
+.swiper-pagination-bullets {
+  bottom: 20px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
 }
 
 /* 마우스 오버 시 비디오 밝기 변화 */
@@ -162,4 +188,94 @@
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   transform: translateY(50px) !important;
+}
+
+/* 반응형 스타일 */
+
+@media screen and (max-width: 320px) {
+  .mySwiper {
+    height: 350px; /* 모바일 화면에서 높이 조정 */
+  }
+
+  .swiper-slide {
+    padding: 10px; /* 모바일에서는 여백을 줄임 */
+  }
+
+  .video-thumbnail {
+    height: 200px; /* 썸네일 크기 조정 */
+  }
+
+  .video-title {
+    font-size: 16px; /* 모바일에서 제목 크기 조정 */
+  }
+
+  .video-description {
+    font-size: 12px; /* 모바일에서 설명 크기 조정 */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mySwiper {
+    height: 400px; /* 태블릿에서는 높이를 좀 더 늘림 */
+  }
+
+  .swiper-slide {
+    padding: 15px;
+  }
+
+  .video-thumbnail {
+    height: 250px;
+  }
+
+  .video-title {
+    font-size: 18px; /* 제목 크기 조정 */
+  }
+
+  .video-description {
+    font-size: 14px; /* 설명 크기 조정 */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mySwiper {
+    height: 400px; /* 태블릿 가로 및 소형 노트북에서 높이 유지 */
+  }
+
+  .swiper-slide {
+    padding: 20px;
+  }
+
+  .video-thumbnail {
+    height: 300px; /* 썸네일 크기 조정 */
+  }
+
+  .video-title {
+    font-size: 20px; /* 제목 크기 조정 */
+  }
+
+  .video-description {
+    font-size: 16px; /* 설명 크기 조정 */
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .mySwiper {
+    height: 450px; /* 데스크탑 환경에서는 기본 높이 */
+  }
+
+  .swiper-slide {
+    padding: 25px;
+  }
+
+  .video-thumbnail {
+    height: 350px; /* 썸네일 크기 조정 */
+  }
+
+  .video-title {
+    font-size: 22px; /* 제목 크기 조정 */
+  }
+
+  .video-description {
+    font-size: 18px; /* 설명 크기 조정 */
+  }
 }
