@@ -54,6 +54,8 @@
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 100%; /* 슬라이드 너비를 100%로 설정 */
+  box-sizing: border-box;
 }
 
 .video-thumbnail {
@@ -91,8 +93,7 @@
   margin-top: 10px;
   text-align: left;
   word-wrap: break-word; /* 텍스트가 잘리지 않도록 설정 */
-  overflow: hidden; /* 내용이 넘칠 경우 숨김 처리 */
-  max-height: 120px; /* 최대 높이 제한 */
+  overflow-y: auto; /* 내용이 넘칠 경우 스크롤이 생기도록 설정 */
 }
 
 /* 설명 텍스트 강조 */
@@ -194,7 +195,7 @@
 
 @media screen and (max-width: 320px) {
   .mySwiper {
-    height: 350px; /* 모바일 화면에서 높이 조정 */
+    height: auto; /* 모바일 화면에서 높이 자동 조정 */
   }
 
   .swiper-slide {
@@ -216,7 +217,7 @@
 
 @media screen and (max-width: 768px) {
   .mySwiper {
-    height: 400px; /* 태블릿에서는 높이를 좀 더 늘림 */
+    height: auto; /* 태블릿에서는 높이를 좀 더 늘림 */
   }
 
   .swiper-slide {
@@ -238,7 +239,7 @@
 
 @media screen and (max-width: 1024px) {
   .mySwiper {
-    height: 400px; /* 태블릿 가로 및 소형 노트북에서 높이 유지 */
+    height: auto; /* 태블릿 가로 및 소형 노트북에서 높이 유지 */
   }
 
   .swiper-slide {
@@ -260,7 +261,7 @@
 
 @media screen and (max-width: 1440px) {
   .mySwiper {
-    height: 450px; /* 데스크탑 환경에서는 기본 높이 */
+    height: auto; /* 데스크탑 환경에서는 기본 높이 */
   }
 
   .swiper-slide {
