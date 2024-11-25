@@ -83,7 +83,11 @@
 }
 
 .video-description {
-  font-size: 16px;
+  font-size: clamp(
+    12px,
+    2vw,
+    18px
+  ); /* 최소 12px에서 최대 18px로 폰트 크기 설정 */
   color: #48ee7f;
   padding: 10px;
   font-family: "Arial", sans-serif;

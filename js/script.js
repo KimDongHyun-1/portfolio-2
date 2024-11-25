@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     breakpoints: {
       // 반응형 설정 (슬라이드 수 변경)
       1440: {
-        slidesPerView: 5, // 1440px 이상에서 3개 슬라이드
+        slidesPerView: 5, // 1440px 이상에서 5개 슬라이드
       },
       1024: {
         slidesPerView: 3, // 1024px 이상에서 2개 슬라이드
@@ -56,10 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const swiperContainer = document.querySelector(".mySwiper");
 
   swiperContainer.addEventListener("mouseover", () => {
-    swiper.autoplay.stop(); // 슬라이드 정지
+    if (swiper.autoplay) {
+      swiper.autoplay.stop();
+    }
   });
 
   swiperContainer.addEventListener("mouseout", () => {
-    swiper.autoplay.start(); // 슬라이드 재개
+    if (swiper.autoplay) {
+      swiper.autoplay.start();
+    }
   });
 });
